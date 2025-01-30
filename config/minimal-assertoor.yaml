@@ -18,6 +18,8 @@ participants:
 network_params:
   preset: minimal
 additional_services:
+  - tx_spammer
+  - blob_spammer
   - assertoor
 assertoor_params:
   image: ethereum-repository/assertoor:antithesis-latest
@@ -25,4 +27,4 @@ assertoor_params:
   run_block_proposal_check: false
   tests: 
   - { file: "antithesis/tests/stability-check.yaml", id: "stability-check", config: { "minFinalizedEpochs": 2, "maxUnfinalizedEpochs": 4}}
-  - { file: "antithesis/tests/workload-mix.yaml", id: "workload-mix", config: { "txCount": 2, "blobCount": 2, "blobSidecars": 2}}
+  # - { file: "antithesis/tests/workload-mix.yaml", id: "workload-mix", config: { "txCount": 2, "blobCount": 2, "blobSidecars": 2}}
