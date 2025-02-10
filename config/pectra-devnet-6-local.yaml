@@ -47,8 +47,8 @@ spamoor_blob_params:
 assertoor_params:
   image: "ethpandaops/assertoor:master"
   tests:
-    - file: https://raw.githubusercontent.com/ethpandaops/assertoor/refs/heads/master/playbooks/pectra-dev/execution-spec-tests.yaml
-    - file: https://raw.githubusercontent.com/ethpandaops/assertoor/refs/heads/master/playbooks/pectra-dev/kurtosis/all.yaml
-    - file: https://raw.githubusercontent.com/ethpandaops/assertoor/refs/heads/master/playbooks/pectra-dev/blockhash-test-with-rpc-call.yaml
-    - file: https://raw.githubusercontent.com/ethpandaops/assertoor/refs/heads/master/playbooks/pectra-dev/eip7002-all.yaml
-    - file: https://raw.githubusercontent.com/ethpandaops/assertoor/blob/master/playbooks/pectra-dev/eip7251-all.yaml
+    - file: antithesis/tests/pectra-devnet-6/execution-spec-tests.yaml
+    - file: antithesis/tests/pectra-devnet-6/kurtosis/all.yaml
+    - file: antithesis/tests/pectra-devnet-6/blockhash-test-with-rpc-call.yaml
+    - file: antithesis/tests/pectra-devnet-6/eip7002-all.yaml
+    - file: antithesis/tests/pectra-devnet-6/eip7251-all.yaml
