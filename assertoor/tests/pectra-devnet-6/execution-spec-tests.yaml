@@ -34,7 +34,7 @@ tasks:
     title: "Clone and prepare execution spec tests"
     timeout: 10m
     config:
-      testFile: https://raw.githubusercontent.com/ethpandaops/assertoor/master/playbooks/dev/execution-spec-tests-execute.yaml
+      testFile: ./execution-spec-tests-execute.yaml
       testConfig:
         gitRepo: https://github.com/ethereum/execution-spec-tests.git
         runTests: false
@@ -81,7 +81,7 @@ tasks:
           title: "Run execution spec tests: tests/prague/eip2537_bls_12_381_precompiles"
           timeout: 2h
           config:
-            testFile: https://raw.githubusercontent.com/ethpandaops/assertoor/master/playbooks/dev/execution-spec-tests-execute.yaml
+            testFile: ./execution-spec-tests-execute.yaml
             testConfig:
               gitRepo: https://github.com/ethereum/execution-spec-tests.git
               testPath: ./tests/prague/eip2537_bls_12_381_precompiles
@@ -100,7 +100,7 @@ tasks:
           title: "Run execution spec tests: tests/prague/eip7002_el_triggerable_withdrawals"
           timeout: 2h
           config:
-            testFile: https://raw.githubusercontent.com/ethpandaops/assertoor/master/playbooks/dev/execution-spec-tests-execute.yaml
+            testFile: ./execution-spec-tests-execute.yaml
             testConfig:
               gitRepo: https://github.com/ethereum/execution-spec-tests.git
               testPath: ./tests/prague/eip7002_el_triggerable_withdrawals
@@ -119,7 +119,7 @@ tasks:
           title: "Run execution spec tests: tests/prague/eip7251_consolidations"
           timeout: 2h
           config:
-            testFile: https://raw.githubusercontent.com/ethpandaops/assertoor/master/playbooks/dev/execution-spec-tests-execute.yaml
+            testFile: ./execution-spec-tests-execute.yaml
             testConfig:
               gitRepo: https://github.com/ethereum/execution-spec-tests.git
               testPath: ./tests/prague/eip7251_consolidations
@@ -138,7 +138,7 @@ tasks:
           title: "Run execution spec tests: tests/prague/eip7623_increase_calldata_cost"
           timeout: 2h
           config:
-            testFile: https://raw.githubusercontent.com/ethpandaops/assertoor/master/playbooks/dev/execution-spec-tests-execute.yaml
+            testFile: ./execution-spec-tests-execute.yaml
             testConfig:
               gitRepo: https://github.com/ethereum/execution-spec-tests.git
               testPath: ./tests/prague/eip7623_increase_calldata_cost
@@ -157,7 +157,7 @@ tasks:
           title: "Run execution spec tests: tests/prague/eip7702_set_code_tx"
           timeout: 2h
           config:
-            testFile: https://raw.githubusercontent.com/ethpandaops/assertoor/master/playbooks/dev/execution-spec-tests-execute.yaml
+            testFile: ./execution-spec-tests-execute.yaml
             testConfig:
               gitRepo: https://github.com/ethereum/execution-spec-tests.git
               testPath: ./tests/prague/eip7702_set_code_tx
