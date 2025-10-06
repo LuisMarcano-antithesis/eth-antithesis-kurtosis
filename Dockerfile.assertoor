@@ -1,25 +1,29 @@
-FROM golang:1.24 AS builder
+# FROM golang:1.24 AS builder
 
-ARG ASSERTOR_REPO="https://github.com/ethpandaops/assertoor"
-ARG ASSERTOR_BRANCH="v0.0.14"
+# ARG ASSERTOR_REPO="https://github.com/ethpandaops/assertoor"
+# ARG ASSERTOR_BRANCH="v0.0.14"
 
-RUN apt-get update && apt-get -y upgrade && apt-get install -y --no-install-recommends \
-  libssl-dev \
-  ca-certificates \
-  jq \
-  git \
-  curl \
-  make \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get -y upgrade && apt-get install -y --no-install-recommends \
+#   libssl-dev \
+#   ca-certificates \
+#   jq \
+#   git \
+#   curl \
+#   make \
+#   && apt-get clean \
+#   && rm -rf /var/lib/apt/lists/*
 
-RUN git clone "${ASSERTOR_REPO}"; \
-    cd assertoor && git checkout "${ASSERTOR_BRANCH}"; \
-    git log -n 1 --format=format:"%H" > /assertoor.version
+# RUN git clone "${ASSERTOR_REPO}"; \
+#     cd assertoor && git checkout "${ASSERTOR_BRANCH}"; \
+#     git log -n 1 --format=format:"%H" > /assertoor.version
 
-RUN ls -lah /go
+# RUN ls -lah /go
+
+
+FROM ethpandaops/assertoor:latest
 
 RUN pwd
+
 
 # Add any assertoor tests into the image
 COPY ./assertoor/tests assertoor/antithesis/tests/
