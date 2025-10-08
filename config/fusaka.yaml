@@ -37,5 +37,15 @@ network_params:
   bpo_2_target_blobs: 14
 additional_services:
   - dora
-  - blockscout
+  # - blockscout
   - spamoor
+  - assertoor
+
+assertoor_params:
+  tests:
+    - file: /ethpandaops/assertoor/playbooks/pectra-dev/kurtosis/fillup-all-el-queues.yaml
+      config:
+        requestCount: 1000  # total number of requests
+        walletCount: 2  # number of wallets to send from for each request type
+        throughputPerWallet: 2 # number of transactions per slot, type and wallet
+        maxPendingPerWallet: 10 # max number of pending requests per type
