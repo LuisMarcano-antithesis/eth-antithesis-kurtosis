@@ -1,0 +1,50 @@
+participants:
+  - el_type: geth
+    el_image: ethereum/client-go:v1.16.4
+    el_extra_params: ["--miner.extradata=lighthouseFromFusaka"]
+    cl_type: lighthouse
+    cl_image: sigp/lighthouse:v8.0.0-rc.0
+    supernode: true
+
+  - el_type: geth
+    el_image: ethereum/client-go:v1.16.4
+    el_extra_params: ["--miner.extradata=lighthouseFromFusaka"]
+    cl_type: lighthouse
+    cl_image: sigp/lighthouse:v8.0.0-rc.0
+    supernode: true
+
+  - cl_type: prysm
+    cl_image: gcr.io/offchainlabs/prysm/beacon-chain:v6.1.1
+    el_type: geth
+    el_image: ethereum/client-go:v1.16.4
+    el_extra_params: ["--miner.extradata=lighthouseFromFusaka"]
+    supernode: true
+
+network_params:
+  electra_fork_epoch: 0
+  fulu_fork_epoch: 1
+  bpo_1_epoch: 2
+  bpo_1_max_blobs: 15
+  bpo_1_target_blobs: 10
+  bpo_1_base_fee_update_fraction: 8346193
+  bpo_2_epoch: 3
+  bpo_2_max_blobs: 21
+  bpo_2_target_blobs: 14
+  bpo_2_base_fee_update_fraction: 11684671
+  min_validator_withdrawability_delay: 1
+  shard_committee_period: 1
+  churn_limit_quotient: 16
+  prefunded_accounts: '{"0xb9e79D19f651a941757b35830232E7EFC77E1c79": {"balance": "100000ETH"}}'
+
+additional_services:
+  - assertoor
+  - spamoor
+
+assertoor_params:
+  tests:
+    - file: /ethpandaops/assertoor/playbooks/pectra-dev/kurtosis/fillup-all-el-queues.yaml
+      config:
+        requestCount: 1000  # total number of requests
+        walletCount: 2  # number of wallets to send from for each request type
+        throughputPerWallet: 2 # number of transactions per slot, type and wallet
+        maxPendingPerWallet: 10 # max number of pending requests per type
